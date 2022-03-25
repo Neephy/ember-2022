@@ -1,4 +1,4 @@
-import Abstractroute from './AbstractRoute';
+import Abstractroute from './abstractroute';
 import { action } from '@ember/object';
 import RSVP from 'rsvp';
 

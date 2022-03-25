@@ -1,2 +1,19 @@
 {{page-title "Order"}}
-{{outlet}}
+<LinkTo @route="board"><a class="ui brown label">Retour aux commandes</a></LinkTo>
+<br/>
+<div>{{@model.user.name}} {{@model.user.email}}</div>
+<div>{{@model.dateCreation}}</div>
+<div>{{@model.order.orderdetails.quantity}}</div>
+<a class="ui black label" style="width: 260px; text-align: center;">Nom</a>
+<a class="ui black label" style="width: 260px; text-align: center;">Quantité</a>
+<a class="ui black label" style="width: 260px; text-align: center;">Prix</a>
+<a class="ui black label" style="width: 260px; text-align: center;">Montant</a>
+{{#each @model.orderdetails as |order|}}
+  <div class="positive"><span style="display: inline-block; width: 260px; text-align: center; margin: 2px;">{{order.product.name}}</span>
+  <span style="display: inline-block; width: 260px; text-align: center; margin: 2px;">{{order.quantity}} unités</span>
+  <span style="display: inline-block; width: 260px; text-align: center; margin: 2px;">{{order.product.price}} €</span>
+  <span style="display: inline-block; width: 260px; text-align: center; margin: 2px;">{{order.amount}} €</span></div>
+{{/each}}
+<br/>
+<div>Montant total : {{@model.amount}} €</div>
+<div>Reste à payer : {{@model.toPay}} €</div>

@@ -1,4 +1,4 @@
-import Abstractroute from './AbstractRoute';
+import Abstractroute from './abstractroute';
 
 export default class EmployeesRoute extends Abstractroute {
   model() {
